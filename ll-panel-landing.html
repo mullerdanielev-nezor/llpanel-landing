@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lukács Gábor e.v. — Precíz laminált parkettázás | Ingyenes árajánlat</title>
+<meta name="description" content="Lukács Gábor egyéni vállalkozó — laminált padló lerakás profi aljzat-előkészítéssel, milliméterre illesztett elemekkel, nyikorgásmentes eredménnyel. Fix árajánlat, garancia. Kérj ingyenes árajánlatot.">
+
+<!-- ===== META PIXEL (töltsd ki a saját Pixel ID-ddal) ===== -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'PIXEL_ID_IDE');        /* <-- cseréld ki */
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=PIXEL_ID_IDE&ev=PageView&noscript=1"/></noscript>
+<!-- ===== /META PIXEL ===== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#ffffff;
+    --bg-soft:#f3faf6;
+    --panel:#ffffff;
+    --ink:#0a1712;
+    --muted:#5f7168;
+    --green:#00b85f;
+    --green-d:#059452;
+    --green-deep:#04703f;
+    --green-glow:rgba(0,184,95,.32);
+    --gold:#f5b301;
+    --line:rgba(0,184,95,.20);
+    --line-soft:rgba(10,23,18,.10);
+    --radius:20px;
+    --maxw:1120px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    font-weight:600;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:'Poppins',sans-serif;line-height:1.12;letter-spacing:-.02em;font-weight:800}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .green{color:var(--green-d)}
+
+  /* ---------- gombok ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+    font-family:'Poppins',sans-serif;font-weight:700;font-size:1.02rem;
+    padding:15px 26px;border-radius:999px;cursor:pointer;border:0;
+    background:linear-gradient(135deg,var(--green),var(--green-d));color:#fff;
+    box-shadow:0 14px 34px var(--green-glow);
+    transition:transform .15s ease,box-shadow .2s ease;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 18px 44px var(--green-glow)}
+  .btn-lg{font-size:1.15rem;padding:22px 44px}
+  .btn-sm{padding:12px 22px;font-size:.95rem}
+  .btn-ghost{background:#fff;color:var(--ink);font-weight:700;box-shadow:inset 0 0 0 2px var(--line-soft)}
+  .btn-ghost:hover{box-shadow:inset 0 0 0 2px var(--green)}
+
+  /* ---------- fejléc ---------- */
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);
+    background:rgba(255,255,255,.72);border-bottom:1px solid var(--line-soft)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.15rem;
+    letter-spacing:.22em;text-transform:uppercase}
+  .nav-phone{display:none}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;padding:64px 0 84px;overflow:hidden;
+    background:
+      radial-gradient(60% 60% at 78% 8%, rgba(0,184,95,.16), transparent 60%),
+      radial-gradient(70% 55% at 12% 0%, rgba(0,184,95,.14), transparent 55%),
+      linear-gradient(180deg,#ddf6e9 0%,#ecfbf2 34%,#ffffff 78%);
+  }
+  .hero-inner{position:relative;z-index:2;max-width:760px;margin:0 auto;text-align:center}
+
+  .hero-stats{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;
+    font-size:.92rem;font-weight:700;color:var(--muted);margin-bottom:22px}
+  .hero-stats b{color:var(--ink)}
+  .hero-stats .dot{width:4px;height:4px;border-radius:50%;background:var(--line-soft)}
+  .hero-stats .pin{color:var(--green-d);background:#fff;border:1px solid var(--line-soft);
+    border-radius:999px;padding:8px 18px;box-shadow:0 8px 22px rgba(10,23,18,.07)}
+
+  .hero h1{font-size:clamp(2.4rem,7.2vw,4.05rem);margin-bottom:22px;line-height:1.18}
+  .hl{display:inline-block;background:linear-gradient(135deg,var(--green),var(--green-d));color:#fff;
+    border-radius:16px;padding:.02em .32em;box-shadow:0 14px 32px var(--green-glow)}
+
+  .hero-sub{font-family:'Poppins',sans-serif;font-weight:800;color:var(--green-d);
+    font-size:clamp(1.05rem,2.6vw,1.3rem);margin-bottom:16px}
+  .hero p.lead{font-size:clamp(1.05rem,2.4vw,1.2rem);color:var(--muted);font-weight:600;
+    max-width:600px;margin:0 auto 34px}
+  .hero-note{margin-top:16px;font-size:.85rem;color:var(--muted);font-weight:600}
+
+  .ba-strip{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:620px;margin:40px auto 0}
+  .ba-strip figure{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line-soft);
+    aspect-ratio:4/3;margin:0;background:#eef2f0}
+  .ba-strip img{width:100%;height:100%;object-fit:cover;display:block}
+  .ba-strip figcaption{position:absolute;left:10px;bottom:10px;font-size:.72rem;font-weight:700;color:#fff;
+    background:rgba(10,23,18,.55);padding:4px 10px;border-radius:999px}
+  .ba-strip.ba-single{display:block;border-radius:18px;overflow:hidden;border:1px solid var(--line-soft);
+    box-shadow:0 20px 50px rgba(10,23,18,.12);max-width:640px}
+  .ba-strip.ba-single img{width:100%;height:auto;object-fit:contain}
+
+  .hero-credit{margin-top:24px;font-size:.94rem;color:var(--muted);font-weight:700}
+  .hero-credit b{color:var(--ink)}
+
+  /* ---------- vélemény-kártya ---------- */
+  .review-card{max-width:560px;margin:26px auto 0;text-align:left;
+    background:#fff;border:1px solid var(--line-soft);border-radius:18px;
+    padding:20px 22px;box-shadow:0 22px 50px rgba(10,23,18,.10)}
+  .rc-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .rc-ava{width:44px;height:44px;border-radius:50%;flex:0 0 auto;
+    background:linear-gradient(135deg,var(--green),var(--green-deep));
+    display:flex;align-items:center;justify-content:center;color:#fff;
+    font-family:'Poppins';font-weight:800;font-size:.95rem}
+  .rc-name{font-weight:700;color:var(--ink)}
+  .rc-meta{font-size:.84rem;color:var(--muted);font-weight:600}
+  .rc-badge{display:inline-flex;align-items:center;gap:4px;color:var(--green-d);font-weight:700}
+  .rc-body{font-size:.98rem;color:var(--ink);font-weight:600;line-height:1.55}
+  .rc-actions{display:flex;align-items:center;gap:18px;margin-top:14px;
+    padding-top:12px;border-top:1px solid var(--line-soft);
+    font-size:.86rem;color:var(--muted);font-weight:700}
+  .rc-actions .like{color:var(--green-d);margin-left:auto}
+
+  /* ---------- általános szekció ---------- */
+  section.blk{padding:78px 0}
+  .kicker{font-size:.88rem;color:var(--green-d);font-weight:800;letter-spacing:.02em;margin-bottom:12px;text-transform:uppercase}
+  .h2{font-size:clamp(1.8rem,4.8vw,2.7rem);margin-bottom:16px}
+  .sec-lead{color:var(--muted);max-width:600px;margin-bottom:46px;font-size:1.08rem;font-weight:600}
+  .center{text-align:center;margin-left:auto;margin-right:auto}
+
+  /* ---------- miért most / urgencia ---------- */
+  .urgency{background:linear-gradient(180deg,#0a1712,#123324);color:#fff}
+  .urgency .wrap{text-align:center}
+  .urgency .kicker{color:#8be6ae}
+  .urgency h2{color:#fff}
+  .urgency .warn{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.16);color:#ffd27a;font-weight:700;font-size:.9rem;
+    padding:9px 18px;border-radius:999px;margin:20px 0 28px}
+  .countdown{display:flex;justify-content:center;gap:12px;margin-bottom:32px;flex-wrap:wrap}
+  .countdown .cell{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+    border-radius:14px;padding:14px 20px;min-width:76px}
+  .countdown .cell b{display:block;font-family:'Poppins';font-weight:800;font-size:1.8rem}
+  .countdown .cell span{display:block;font-size:.7rem;color:rgba(255,255,255,.6);
+    text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+  .urgency .sub{color:rgba(255,255,255,.72);max-width:520px;margin:0 auto 28px;font-weight:600}
+  .urgency .btn{background:linear-gradient(135deg,#ffd27a,#f5a623);color:#241a06;box-shadow:0 14px 34px rgba(245,166,35,.35)}
+
+  /* problémák */
+  .prob-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .prob{background:var(--panel);border:1px solid var(--line-soft);
+    border-radius:var(--radius);padding:24px;display:flex;gap:14px;align-items:flex-start;
+    box-shadow:0 12px 30px rgba(10,23,18,.06)}
+  .prob .x{flex:0 0 auto;width:34px;height:34px;border-radius:10px;
+    background:#ffe9e9;color:#e23c3c;
+    display:flex;align-items:center;justify-content:center;font-weight:800}
+  .prob h3{font-size:1.08rem;margin-bottom:4px;font-weight:800}
+  .prob p{font-size:.94rem;color:var(--muted);font-weight:600}
+
+  /* folyamat */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+  .step{position:relative;background:var(--panel);border:1px solid var(--line-soft);
+    border-radius:var(--radius);padding:28px 22px;box-shadow:0 12px 30px rgba(10,23,18,.06)}
+  .step::before{counter-increment:s;content:"0" counter(s);
+    font-family:'Poppins';font-weight:800;font-size:1.7rem;color:var(--green-d);
+    display:block;margin-bottom:12px}
+  .step h3{font-size:1.08rem;margin-bottom:6px;font-weight:800}
+  .step p{font-size:.92rem;color:var(--muted);font-weight:600}
+
+  /* szolgáltatások */
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .svc{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);
+    overflow:hidden;box-shadow:0 12px 30px rgba(10,23,18,.06)}
+  .svc .svc-img{aspect-ratio:4/3;background:#eef2f0}
+  .svc .svc-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .svc h3{font-size:1.2rem;font-weight:800;padding:16px 18px}
+
+  /* referenciák — placeholder */
+  .ref-placeholder{max-width:620px;margin:0 auto;text-align:center;
+    border:2px dashed var(--line);border-radius:var(--radius);
+    padding:54px 24px;color:var(--muted);font-weight:700;font-size:1.05rem;background:#fff}
+
+  /* miért engem válassz */
+  .why ul{list-style:none;display:grid;gap:16px;max-width:680px;margin:0 auto}
+  .why li{display:flex;gap:14px;align-items:flex-start;text-align:left}
+  .why .chk{flex:0 0 auto;width:32px;height:32px;border-radius:10px;
+    background:#e7f9ee;color:var(--green-d);
+    display:flex;align-items:center;justify-content:center;font-weight:800}
+  .why li b{font-family:'Poppins';display:block;margin-bottom:2px;font-weight:800;font-size:1.05rem}
+  .why li span{color:var(--muted);font-size:.96rem;font-weight:600}
+
+  /* vélemény idézet */
+  .quote{max-width:760px;margin:0 auto;text-align:center;
+    background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:46px 34px;
+    box-shadow:0 24px 60px rgba(0,184,95,.12)}
+  .quote p{font-family:'Poppins';font-weight:700;font-size:clamp(1.2rem,3vw,1.55rem);line-height:1.4;margin-bottom:18px}
+  .quote .who{color:var(--muted);font-size:.94rem;font-weight:700}
+
+  /* GYIK */
+  .faq{max-width:760px;margin:0 auto;display:grid;gap:10px}
+  .faq-item{background:var(--panel);border:1px solid var(--line-soft);border-radius:14px;padding:6px 20px}
+  .faq-item summary{cursor:pointer;padding:16px 0;font-weight:700;font-family:'Poppins';
+    list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:"+";font-size:1.3rem;color:var(--green-d);flex:0 0 auto}
+  .faq-item[open] summary::after{content:"–"}
+  .faq-item p{padding:0 0 18px;color:var(--muted);font-weight:600;font-size:.96rem}
+
+  /* CTA / űrlap */
+  .cta-sec{background:
+      radial-gradient(70% 60% at 50% 0%,rgba(0,184,95,.12),transparent 62%),var(--bg-soft);
+    border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .cta-box{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .cta-copy{text-align:center}
+  .cta-copy h2{font-size:clamp(1.9rem,5vw,2.8rem);margin-bottom:16px}
+  .cta-copy p{color:var(--muted);margin-bottom:22px;font-weight:600}
+  .cta-copy .li-row{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+  .cta-copy .li{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:.97rem;font-weight:600}
+  .cta-copy .li b{color:var(--ink);font-weight:800}
+  form{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:32px;
+    box-shadow:0 26px 60px rgba(10,23,18,.12)}
+  form h3{font-size:1.35rem;margin-bottom:6px;font-weight:800}
+  form .sub{color:var(--muted);font-size:.92rem;margin-bottom:22px;font-weight:600}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:.88rem;color:var(--ink);margin-bottom:7px;font-weight:700}
+  .field input,.field textarea,.field select{width:100%;background:#f7faf8;color:var(--ink);
+    border:1px solid var(--line-soft);border-radius:12px;padding:14px 15px;
+    font-family:inherit;font-size:1rem;font-weight:600;transition:border-color .15s}
+  .field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);
+    background-position:calc(100% - 20px) center,calc(100% - 15px) center;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--green);
+    box-shadow:0 0 0 3px rgba(0,184,95,.15);background:#fff}
+  .field textarea{resize:vertical;min-height:84px}
+  form .btn{width:100%;margin-top:6px}
+  .form-fine{font-size:.8rem;color:var(--muted);margin-top:14px;text-align:center;font-weight:600}
+  .form-call{font-size:.86rem;color:var(--muted);margin-top:10px;text-align:center;font-weight:700}
+  .ok{display:none;text-align:center;padding:20px 0}
+  .ok .big{font-family:'Poppins';font-weight:800;font-size:1.5rem;color:var(--green-d);margin-bottom:8px}
+
+  /* záró CTA sáv */
+  .final-cta{background:linear-gradient(135deg,var(--green),var(--green-deep));color:#fff;text-align:center}
+  .final-cta h2{color:#fff;margin-bottom:10px}
+  .final-cta p{color:rgba(255,255,255,.85);margin-bottom:26px;font-weight:600}
+  .final-cta p b{color:#fff;font-weight:800}
+  .final-cta .btn{background:#fff;color:var(--green-deep);box-shadow:0 14px 34px rgba(0,0,0,.18)}
+
+  /* lebegő hívógomb */
+  .call-fab{position:fixed;right:18px;bottom:18px;z-index:60;width:56px;height:56px;border-radius:50%;
+    background:linear-gradient(135deg,var(--green),var(--green-d));color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:1.35rem;
+    box-shadow:0 14px 34px var(--green-glow);transition:transform .15s ease}
+  .call-fab:hover{transform:translateY(-2px) scale(1.04)}
+
+  /* footer */
+  footer{border-top:1px solid var(--line-soft);padding:42px 0 90px;color:var(--muted);font-size:.92rem;font-weight:600}
+  .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start}
+  .foot .brand{font-size:1rem}
+  .foot a{color:var(--muted)}
+  .foot a:hover{color:var(--green-d)}
+  .foot-links{display:flex;gap:16px;flex-wrap:wrap}
+
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{
+    outline:2px solid var(--green);outline-offset:2px}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+
+  /* ---------- reszponzív ---------- */
+  @media(min-width:760px){
+    .nav-phone{display:inline-flex;font-weight:700;font-size:.95rem;color:var(--ink)}
+  }
+  @media(max-width:820px){
+    .cta-box{grid-template-columns:1fr;gap:28px}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .services{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:560px){
+    section.blk{padding:56px 0}
+    .prob-grid{grid-template-columns:1fr}
+    .services{grid-template-columns:1fr}
+    .hero{padding:44px 0 60px}
+    .btn-lg{font-size:1.05rem;padding:18px 32px;width:100%}
+    .countdown .cell{padding:12px 14px;min-width:64px}
+    .countdown .cell b{font-size:1.4rem}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">Lukács&nbsp;Gábor</div>
+    <a class="nav-phone" href="tel:+36300000000">+36 30 000 0000</a>
+    <a class="btn btn-sm" href="#ajanlat">Ajánlatot kérek</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-stats reveal">
+      <span class="pin">Pest · Fejér · Esztergom megye</span>
+    </div>
+
+    <h1>Ugyanaz a lakás.<br><span class="hl">Teljesen más hatás.</span></h1>
+
+    <div class="hero-sub">Néha nem új lakás kell. Csak egy új padló.</div>
+
+    <p class="lead">A padló változott. Melegebb. Otthonosabb. Igényesebb.</p>
+
+    <a class="btn btn-lg" href="#ajanlat">Ingyenes ajánlatot kérek →</a>
+
+    <figure class="ba-strip ba-single reveal">
+      <img loading="lazy" src="images/elotte-utana-nappali.png" alt="Nappali előtte-utána: régi padló és új, fahatású laminált padló összehasonlítása">
+    </figure>
+
+    <div class="hero-credit reveal"><b>Lukács Gábor</b> · kivitelező · egyéni vállalkozó</div>
+
+    <div class="review-card reveal" style="text-align:center">
+      <div class="h2" style="margin:0">100+ <span class="green">elégedett ügyfél</span></div>
+      <div class="rc-meta" style="margin-top:6px">Precíz munka, fix árral, garanciával</div>
+    </div>
+  </div>
+</section>
+
+<!-- MIÉRT MOST #1 -->
+<section class="blk urgency">
+  <div class="wrap">
+    <div class="kicker reveal">Miért most</div>
+    <h2 class="h2 reveal">Idénre már csak havi 4 új időpont elérhető.</h2>
+    <span class="warn reveal">⚠ Fogynak az időpontok</span>
+    <div class="countdown reveal" aria-label="Visszaszámlálás karácsonyig">
+      <div class="cell"><b class="cd-d">00</b><span>nap</span></div>
+      <div class="cell"><b class="cd-h">00</b><span>óra</span></div>
+      <div class="cell"><b class="cd-m">00</b><span>perc</span></div>
+      <div class="cell"><b class="cd-s">00</b><span>mp</span></div>
+    </div>
+    <a class="btn btn-lg reveal" href="#ajanlat">Kérek őszi árajánlatot →</a>
+  </div>
+</section>
+
+<!-- AJÁNLATKÉRÉS -->
+<section class="blk cta-sec" id="ajanlat">
+  <div class="wrap cta-box">
+    <div class="cta-copy reveal">
+      <div class="kicker">Ajánlatkérés</div>
+      <h2>Kérj ingyenes árajánlatot</h2>
+      <div class="li-row">
+        <div class="li"><span class="green">✓</span><b>Ingyenes felmérés</b></div>
+        <div class="li"><span class="green">✓</span><b>Fix ár</b></div>
+        <div class="li"><span class="green">✓</span><b>Garancia</b></div>
+      </div>
+    </div>
+
+    <form id="lead-form" novalidate>
+      <div id="form-content">
+        <h3>Ingyenes ajánlatot kérek</h3>
+        <p class="sub">Töltsd ki, a többit intézzük.</p>
+        <div class="field">
+          <label for="name">Neved</label>
+          <input id="name" name="name" type="text" placeholder="Kovács Péter" required>
+        </div>
+        <div class="field">
+          <label for="phone">Telefonszámod</label>
+          <input id="phone" name="phone" type="tel" placeholder="+36 30 000 0000" required>
+        </div>
+        <div class="field">
+          <label for="city">Település</label>
+          <input id="city" name="city" type="text" placeholder="Pl. a te településed">
+        </div>
+        <div class="field">
+          <label for="service">Mire kérsz ajánlatot?</label>
+          <select id="service" name="service">
+            <option value="">Válassz szolgáltatást</option>
+            <option>Laminált padló lerakás</option>
+            <option>Aljzat-előkészítés, kiegyenlítés</option>
+            <option>Régi padló bontása</option>
+            <option>Szegélyléc, küszöbök</option>
+            <option>Egyéb / nem tudom</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="msg">Üzeneted <span style="opacity:.6">(opcionális)</span></label>
+          <textarea id="msg" name="msg" placeholder="Pl. 45 m² nappali laminálását szeretném, most nyikorog és hézagos az aljzat."></textarea>
+        </div>
+        <button class="btn" type="submit">Ingyenes ajánlatot kérek →</button>
+        <div class="form-fine">Kötelezettségmentes, az adataidat nem adjuk tovább.</div>
+        <div class="form-call">Vagy hívj közvetlenül: <a href="tel:+36300000000">+36 30 000 0000</a></div>
+      </div>
+      <div class="ok" id="form-ok">
+        <div class="big">Megvan, köszönjük! ✓</div>
+        <p style="color:var(--muted)">24 órán belül keresünk telefonon a felmérés időpontjáért.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- SZOLGÁLTATÁSOK -->
+<section class="blk">
+  <div class="wrap" style="text-align:center">
+    <div class="kicker reveal">Szolgáltatások</div>
+    <h2 class="h2 reveal">Amiben segíteni tudok</h2>
+    <!-- ILLUSZTRÁCIÓ (Pexels, szabad felhasználású) — cserélhető saját munkafotókra -->
+    <div class="services">
+      <div class="svc reveal"><div class="svc-img"><img loading="lazy" src="images/szolg-padlo-lerakas.jpg" alt="Laminált padló lerakása"></div><h3>Laminált padló lerakás</h3></div>
+      <div class="svc reveal"><div class="svc-img"><img loading="lazy" src="images/szolg-aljzat-elokeszites.jpg" alt="Aljzat előkészítés és kiegyenlítés"></div><h3>Aljzat előkészítés és kiegyenlítés</h3></div>
+      <div class="svc reveal"><div class="svc-img"><img loading="lazy" src="images/szolg-regi-padlo-bontasa.jpg" alt="Régi padló bontása"></div><h3>Régi padló bontása</h3></div>
+      <div class="svc reveal"><div class="svc-img"><img loading="lazy" src="images/szolg-szegelylec-kuszob.jpg" alt="Szegélyléc és küszöbök illesztése"></div><h3>Szegélyléc és küszöbök</h3></div>
+      <div class="svc reveal"><div class="svc-img"><img loading="lazy" src="images/szolg-parazaro-folia.jpg" alt="Párazáró fólia és szigetelés"></div><h3>Párazáró fólia és szigetelés</h3></div>
+      <div class="svc reveal"><div class="svc-img"><img loading="lazy" src="images/szolg-lepcso-folyoso.jpg" alt="Lépcső és folyosóburkolás"></div><h3>Lépcső és folyosóburkolás</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCIÁK -->
+<section class="blk" style="background:var(--bg-soft)">
+  <div class="wrap" style="text-align:center">
+    <div class="kicker reveal">Referenciák</div>
+    <h2 class="h2 reveal">Ez nem ígéret, hanem bizonyíték</h2>
+    <p class="sec-lead reveal center">Nem cseréltük le a lakást. Csak a padlót.</p>
+    <div class="ref-placeholder reveal">Ide raknánk a referencia képeidet</div>
+  </div>
+</section>
+
+<!-- GYIK -->
+<section class="blk">
+  <div class="wrap">
+    <div class="kicker reveal center" style="text-align:center">GYIK</div>
+    <h2 class="h2 reveal center" style="text-align:center">Gyakori kérdések</h2>
+    <div class="faq">
+      <details class="faq-item reveal">
+        <summary>Mennyibe kerül? Mitől függ az ár?</summary>
+        <p>A pontos árat egy rövid helyszíni felméréshez kötöm, mert a m² mellett az aljzat állapota, az elemek típusa és a helyiség kialakítása is számít. Az árajánlat mindig írásban, fix áron érkezik.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Mennyi idő alatt készül el egy munka?</summary>
+        <p>Egy átlagos lakás padlózata jellemzően néhány munkanap alatt elkészül, az aljzat állapotától és a m²-től függően — pontos időpontot a felmérés után adok.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Adsz garanciát?</summary>
+        <p>Igen, a beépített munkára garanciát vállalok — ennek pontos feltételeit az árajánlatban írásban rögzítem.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Kell előleget fizetni?</summary>
+        <p>Ezt a felmérés után, az árajánlattal együtt egyeztetjük — nincs meglepetés, minden írásban.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Milyen területen vállalsz munkát?</summary>
+        <p>A pontos működési területet és az esetleges kiszállási költséget a felmérés előtt tisztázzuk telefonon.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ZÁRÓ CTA -->
+<section class="blk final-cta">
+  <div class="wrap">
+    <h2>Egy új padló nem csak szebbé teheti az otthonod.</h2>
+    <p>Egy amerikai kutatás szerint a fa padló <b>az egyik legjobban megtérülő felújítás</b>. Ha zavar a régi padló, <b>itt az ideje a váltásnak</b>.</p>
+    <a class="btn btn-lg" href="#ajanlat">Ingyenes ajánlatot kérek →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div class="brand">Lukács&nbsp;Gábor</div>
+      <div style="margin-top:8px">Laminált parkettázás — ——</div>
+    </div>
+    <div>
+      <a href="tel:+36300000000">+36 30 000 0000</a> · <a href="mailto:pelda@email.hu">pelda@email.hu</a><br>
+      Nyilvántartási szám: —— · Adószám: ——
+    </div>
+    <div class="foot-links">
+      <a href="#">Adatkezelési tájékoztató</a>
+      <a href="#">Impresszum</a>
+    </div>
+    <div>© 2026 Lukács Gábor e.v.</div>
+  </div>
+</footer>
+
+<!-- lebegő hívógomb -->
+<a class="call-fab" href="tel:+36300000000" aria-label="Hívás">☎</a>
+
+<script>
+  /* belépő animáció */
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  /* visszaszámlálás — cseréld a célnapot a saját szezonvégedre */
+  const cdTarget = new Date('2026-12-24T00:00:00');
+  function pad(n){return String(n).padStart(2,'0')}
+  function tickCountdown(){
+    const diff = cdTarget - new Date();
+    const d = Math.max(0, Math.floor(diff/86400000));
+    const h = Math.max(0, Math.floor(diff%86400000/3600000));
+    const m = Math.max(0, Math.floor(diff%3600000/60000));
+    const s = Math.max(0, Math.floor(diff%60000/1000));
+    document.querySelectorAll('.cd-d').forEach(el=>el.textContent=pad(d));
+    document.querySelectorAll('.cd-h').forEach(el=>el.textContent=pad(h));
+    document.querySelectorAll('.cd-m').forEach(el=>el.textContent=pad(m));
+    document.querySelectorAll('.cd-s').forEach(el=>el.textContent=pad(s));
+  }
+  tickCountdown();
+  setInterval(tickCountdown,1000);
+
+  /* űrlap beküldés + Meta Pixel Lead event */
+  document.getElementById('lead-form').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    const name=document.getElementById('name').value.trim();
+    const phone=document.getElementById('phone').value.trim();
+    if(!name||!phone){
+      if(!name){document.getElementById('name').focus();}
+      else{document.getElementById('phone').focus();}
+      return;
+    }
+
+    /* >>> IDE jön a valós beküldés: e-mail / webhook / CRM <<< */
+    /* pl. fetch('/lead', {method:'POST', body: new FormData(this)}) */
+
+    if(typeof fbq==='function'){ fbq('track','Lead'); }   /* Meta Pixel Lead event */
+
+    document.getElementById('form-content').style.display='none';
+    document.getElementById('form-ok').style.display='block';
+  });
+</script>
+</body>
+</html>
