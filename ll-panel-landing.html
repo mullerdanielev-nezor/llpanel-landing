@@ -195,10 +195,25 @@ src="https://www.facebook.com/tr?id=PIXEL_ID_IDE&ev=PageView&noscript=1"/></nosc
   .svc .svc-img img{width:100%;height:100%;object-fit:cover;display:block}
   .svc h3{font-size:1.2rem;font-weight:800;padding:16px 18px}
 
-  /* referenciák — placeholder */
-  .ref-placeholder{max-width:620px;margin:0 auto;text-align:center;
-    border:2px dashed var(--line);border-radius:var(--radius);
-    padding:54px 24px;color:var(--muted);font-weight:700;font-size:1.05rem;background:#fff}
+  /* referenciák — galéria */
+  .ref-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1000px;margin:0 auto}
+  .ref-shot{aspect-ratio:3/4;border-radius:16px;overflow:hidden;border:1px solid var(--line-soft);
+    box-shadow:0 12px 30px rgba(10,23,18,.08);background:#eef2f0}
+  .ref-shot img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in;
+    transition:transform .25s ease}
+  .ref-shot img:hover{transform:scale(1.04)}
+
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;z-index:200;background:rgba(6,12,9,.9);
+    display:none;align-items:center;justify-content:center;padding:28px;
+    -webkit-tap-highlight-color:transparent}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:100%;max-height:88vh;border-radius:14px;
+    box-shadow:0 24px 60px rgba(0,0,0,.4)}
+  .lightbox-close{position:absolute;top:20px;right:22px;width:44px;height:44px;border-radius:50%;
+    border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;
+    font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .lightbox-close:hover{background:rgba(255,255,255,.18)}
 
   /* miért engem válassz */
   .why ul{list-style:none;display:grid;gap:16px;max-width:680px;margin:0 auto}
@@ -297,11 +312,13 @@ src="https://www.facebook.com/tr?id=PIXEL_ID_IDE&ev=PageView&noscript=1"/></nosc
     .cta-box{grid-template-columns:1fr;gap:28px}
     .steps{grid-template-columns:repeat(2,1fr)}
     .services{grid-template-columns:1fr 1fr}
+    .ref-grid{grid-template-columns:repeat(2,1fr)}
   }
   @media(max-width:560px){
     section.blk{padding:56px 0}
     .prob-grid{grid-template-columns:1fr}
     .services{grid-template-columns:1fr}
+    .ref-grid{grid-template-columns:1fr 1fr;gap:10px}
     .hero{padding:44px 0 60px}
     .btn-lg{font-size:1.05rem;padding:18px 32px;width:100%}
     .countdown .cell{padding:12px 14px;min-width:64px}
@@ -323,7 +340,7 @@ src="https://www.facebook.com/tr?id=PIXEL_ID_IDE&ev=PageView&noscript=1"/></nosc
 <section class="hero">
   <div class="wrap hero-inner">
     <div class="hero-stats reveal">
-      <span class="pin">Pest · Fejér · Esztergom megye</span>
+      <span class="pin">Pest és Fejér megye</span>
     </div>
 
     <h1>Ugyanaz a lakás.<br><span class="hl">Teljesen más hatás.</span></h1>
@@ -335,7 +352,7 @@ src="https://www.facebook.com/tr?id=PIXEL_ID_IDE&ev=PageView&noscript=1"/></nosc
     <a class="btn btn-lg" href="#ajanlat">Ingyenes ajánlatot kérek →</a>
 
     <figure class="ba-strip ba-single reveal">
-      <img loading="lazy" src="images/elotte-utana-nappali.png" alt="Nappali előtte-utána: régi padló és új, fahatású laminált padló összehasonlítása">
+      <img loading="lazy" src="images/elotte-utana-valodi.jpg" alt="Valódi előtte-utána: laminált padló lerakása előtt és a kész, elkészült padló">
     </figure>
 
     <div class="hero-credit reveal"><b>Lukács Gábor</b> · kivitelező · egyéni vállalkozó</div>
@@ -427,7 +444,6 @@ src="https://www.facebook.com/tr?id=PIXEL_ID_IDE&ev=PageView&noscript=1"/></nosc
     <!-- ILLUSZTRÁCIÓ (Pexels, szabad felhasználású) — cserélhető saját munkafotókra -->
     <div class="services">
       <div class="svc reveal"><div class="svc-img"><img loading="lazy" src="images/szolg-padlo-lerakas.jpg" alt="Laminált padló lerakása"></div><h3>Laminált padló lerakás</h3></div>
-      <div class="svc reveal"><div class="svc-img"><img loading="lazy" src="images/szolg-aljzat-elokeszites.jpg" alt="Aljzat előkészítés és kiegyenlítés"></div><h3>Aljzat előkészítés és kiegyenlítés</h3></div>
       <div class="svc reveal"><div class="svc-img"><img loading="lazy" src="images/szolg-regi-padlo-bontasa.jpg" alt="Régi padló bontása"></div><h3>Régi padló bontása</h3></div>
       <div class="svc reveal"><div class="svc-img"><img loading="lazy" src="images/szolg-szegelylec-kuszob.jpg" alt="Szegélyléc és küszöbök illesztése"></div><h3>Szegélyléc és küszöbök</h3></div>
       <div class="svc reveal"><div class="svc-img"><img loading="lazy" src="images/szolg-parazaro-folia.jpg" alt="Párazáró fólia és szigetelés"></div><h3>Párazáró fólia és szigetelés</h3></div>
@@ -441,8 +457,15 @@ src="https://www.facebook.com/tr?id=PIXEL_ID_IDE&ev=PageView&noscript=1"/></nosc
   <div class="wrap" style="text-align:center">
     <div class="kicker reveal">Referenciák</div>
     <h2 class="h2 reveal">Ez nem ígéret, hanem bizonyíték</h2>
-    <p class="sec-lead reveal center">Nem cseréltük le a lakást. Csak a padlót.</p>
-    <div class="ref-placeholder reveal">Ide raknánk a referencia képeidet</div>
+    <div class="ref-grid">
+      <div class="ref-shot reveal"><img loading="lazy" src="images/referenciak/ref-1.jpg" alt="Lerakott laminált padló, ékkel a fal mellett"></div>
+      <div class="ref-shot reveal"><img loading="lazy" src="images/referenciak/ref-2.jpg" alt="Laminált padló lerakása, elemek és szegélyléc a padlón"></div>
+      <div class="ref-shot reveal"><img loading="lazy" src="images/referenciak/ref-3.jpg" alt="Munkaterület laminált padlózás közben, szerszámokkal"></div>
+      <div class="ref-shot reveal"><img loading="lazy" src="images/referenciak/ref-4.jpg" alt="Kész, üres szoba lerakott laminált padlóval"></div>
+      <div class="ref-shot reveal"><img loading="lazy" src="images/referenciak/ref-5.jpg" alt="Kész laminált padló közelről, szegélyléccel"></div>
+      <div class="ref-shot reveal"><img loading="lazy" src="images/referenciak/ref-6.jpg" alt="Kész laminált padló két helyiség között"></div>
+      <div class="ref-shot reveal"><img loading="lazy" src="images/referenciak/ref-7.jpg" alt="Kész laminált padlós folyosó"></div>
+    </div>
   </div>
 </section>
 
@@ -506,7 +529,33 @@ src="https://www.facebook.com/tr?id=PIXEL_ID_IDE&ev=PageView&noscript=1"/></nosc
 <!-- lebegő hívógomb -->
 <a class="call-fab" href="tel:+36300000000" aria-label="Hívás">☎</a>
 
+<!-- lightbox a referencia képekhez -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Bezárás">✕</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
 <script>
+  /* referencia képek lightboxban */
+  (function(){
+    const lb=document.getElementById('lightbox');
+    const lbImg=document.getElementById('lightbox-img');
+    function openLightbox(src,alt){
+      lbImg.src=src; lbImg.alt=alt||'';
+      lb.classList.add('open');
+    }
+    function closeLightbox(){
+      lb.classList.remove('open');
+      lbImg.src='';
+    }
+    document.querySelectorAll('.ref-shot img').forEach(img=>{
+      img.addEventListener('click',()=>openLightbox(img.src,img.alt));
+    });
+    document.getElementById('lightbox-close').addEventListener('click',closeLightbox);
+    lb.addEventListener('click',(e)=>{ if(e.target===lb) closeLightbox(); });
+    document.addEventListener('keydown',(e)=>{ if(e.key==='Escape') closeLightbox(); });
+  })();
+
   /* belépő animáció */
   const io=new IntersectionObserver((es)=>{
     es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
