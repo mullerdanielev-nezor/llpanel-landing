@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Oldal nem található — Lukács Gábor</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#ffffff; --ink:#0a1712; --muted:#5f7168;
+    --green:#00b85f; --green-d:#059452; --green-glow:rgba(0,184,95,.32);
+    --line-soft:rgba(10,23,18,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',system-ui,sans-serif;font-weight:600;color:var(--ink);
+    background:
+      radial-gradient(60% 60% at 78% 8%, rgba(0,184,95,.16), transparent 60%),
+      radial-gradient(70% 55% at 12% 0%, rgba(0,184,95,.14), transparent 55%),
+      linear-gradient(180deg,#ddf6e9 0%,#ecfbf2 34%,#ffffff 78%);
+    min-height:100vh;display:flex;flex-direction:column;
+    -webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  header{padding:24px 0;text-align:center}
+  .brand{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.05rem;
+    letter-spacing:.2em;text-transform:uppercase}
+  main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px}
+  .card{max-width:480px;text-align:center;background:#fff;border:1px solid var(--line-soft);
+    border-radius:24px;padding:48px 36px;box-shadow:0 24px 60px rgba(10,23,18,.10)}
+  .code{font-family:'Poppins',sans-serif;font-weight:800;font-size:3.2rem;color:var(--green-d);
+    line-height:1;margin-bottom:10px}
+  h1{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.4rem;margin-bottom:12px}
+  p{color:var(--muted);font-weight:600;margin-bottom:28px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+    font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;
+    padding:15px 28px;border-radius:999px;border:0;cursor:pointer;
+    background:linear-gradient(135deg,var(--green),var(--green-d));color:#fff;
+    box-shadow:0 14px 34px var(--green-glow)}
+  footer{text-align:center;padding:22px;color:var(--muted);font-size:.85rem;font-weight:600}
+  footer a{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<header><a href="./" class="brand" style="color:var(--ink)">Lukács&nbsp;Gábor</a></header>
+
+<main>
+  <div class="card">
+    <div class="code">404</div>
+    <h1>Ez az oldal nem található</h1>
+    <p>Lehet, hogy elgépelted a címet, vagy a link már nem érvényes. A padló viszont biztosan a helyén van — irány a főoldal.</p>
+    <a class="btn" href="./">Vissza a főoldalra →</a>
+  </div>
+</main>
+
+<footer>Hívj közvetlenül: <a href="tel:+36304166054">+36 30 416 6054</a></footer>
+
+</body>
+</html>
