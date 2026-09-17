@@ -6,21 +6,24 @@
 <title>Lukács Gábor — Precíz laminált parkettázás | Ingyenes árajánlat</title>
 <meta name="description" content="Lukács Gábor egyéni vállalkozó — laminált padló lerakás profi aljzat-előkészítéssel, milliméterre illesztett elemekkel, nyikorgásmentes eredménnyel. Fix árajánlat, garancia. Kérj ingyenes árajánlatot.">
 
-<!-- ===== META PIXEL (töltsd ki a saját Pixel ID-ddal) ===== -->
+<!-- ===== META PIXEL (töltsd ki a saját Pixel ID-ddal) — csak süti-hozzájárulás után töltődik be ===== -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', 'PIXEL_ID_IDE');        /* <-- cseréld ki */
-fbq('track', 'PageView');
+function loadMetaPixel(){
+  if(window._metaPixelLoaded) return;
+  window._metaPixelLoaded = true;
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'PIXEL_ID_IDE');        /* <-- cseréld ki */
+  fbq('track', 'PageView');
+}
+if(localStorage.getItem('cookie-consent')==='accepted'){ loadMetaPixel(); }
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=PIXEL_ID_IDE&ev=PageView&noscript=1"/></noscript>
 <!-- ===== /META PIXEL ===== -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -286,6 +289,24 @@ src="https://www.facebook.com/tr?id=PIXEL_ID_IDE&ev=PageView&noscript=1"/></nosc
     box-shadow:0 14px 34px var(--green-glow);transition:transform .15s ease}
   .call-fab:hover{transform:translateY(-2px) scale(1.04)}
 
+  /* süti-sáv */
+  .cookie-bar{position:fixed;left:0;right:0;bottom:0;z-index:150;
+    background:#fff;border-top:1px solid var(--line-soft);
+    box-shadow:0 -14px 34px rgba(10,23,18,.12);
+    padding:18px 22px;display:none}
+  .cookie-bar.show{display:block}
+  .cookie-bar-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;
+    gap:18px;flex-wrap:wrap}
+  .cookie-bar p{flex:1 1 320px;font-size:.9rem;color:var(--muted);font-weight:600;margin:0}
+  .cookie-bar p a{color:var(--green-d);font-weight:700}
+  .cookie-bar-actions{display:flex;gap:10px;flex-wrap:wrap}
+  .cookie-bar .btn{padding:11px 20px;font-size:.9rem}
+  .cookie-bar .btn-ghost{background:#fff}
+  @media(max-width:560px){
+    .cookie-bar-actions{width:100%}
+    .cookie-bar .btn{flex:1}
+  }
+
   /* footer */
   footer{border-top:1px solid var(--line-soft);padding:42px 0 90px;color:var(--muted);font-size:.92rem;font-weight:600}
   .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start}
@@ -522,8 +543,9 @@ src="https://www.facebook.com/tr?id=PIXEL_ID_IDE&ev=PageView&noscript=1"/></nosc
       Nyilvántartási szám: —— · Adószám: ——
     </div>
     <div class="foot-links">
-      <a href="#">Adatkezelési tájékoztató</a>
-      <a href="#">Impresszum</a>
+      <a href="adatkezeles.html">Adatkezelési tájékoztató</a>
+      <a href="impresszum.html">Impresszum</a>
+      <a href="#" id="cookie-settings-link">Süti-beállítások</a>
     </div>
     <div>© 2026 Lukács Gábor</div>
   </div>
@@ -532,6 +554,17 @@ src="https://www.facebook.com/tr?id=PIXEL_ID_IDE&ev=PageView&noscript=1"/></nosc
 <!-- lebegő hívógomb -->
 <a class="call-fab" href="tel:+36304166054" aria-label="Hívás">☎</a>
 
+<!-- süti-sáv -->
+<div class="cookie-bar" id="cookie-bar">
+  <div class="cookie-bar-inner">
+    <p>Az oldal a működéshez szükséges elemeken kívül csak a hozzájárulásoddal helyez el mérési/hirdetési sütiket. Bővebben az <a href="adatkezeles.html">adatkezelési tájékoztatóban</a>.</p>
+    <div class="cookie-bar-actions">
+      <button class="btn btn-ghost" type="button" id="cookie-reject">Csak a szükséges</button>
+      <button class="btn" type="button" id="cookie-accept">Elfogadom</button>
+    </div>
+  </div>
+</div>
+
 <!-- lightbox a referencia képekhez -->
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Bezárás">✕</button>
@@ -539,6 +572,28 @@ src="https://www.facebook.com/tr?id=PIXEL_ID_IDE&ev=PageView&noscript=1"/></nosc
 </div>
 
 <script>
+  /* süti-sáv */
+  (function(){
+    const bar=document.getElementById('cookie-bar');
+    const consent=localStorage.getItem('cookie-consent');
+    function showBar(){ bar.classList.add('show'); }
+    function hideBar(){ bar.classList.remove('show'); }
+    if(!consent){ showBar(); }
+    document.getElementById('cookie-accept').addEventListener('click',()=>{
+      localStorage.setItem('cookie-consent','accepted');
+      hideBar();
+      if(typeof loadMetaPixel==='function'){ loadMetaPixel(); }
+    });
+    document.getElementById('cookie-reject').addEventListener('click',()=>{
+      localStorage.setItem('cookie-consent','rejected');
+      hideBar();
+    });
+    const settingsLink=document.getElementById('cookie-settings-link');
+    if(settingsLink){
+      settingsLink.addEventListener('click',(e)=>{ e.preventDefault(); showBar(); });
+    }
+  })();
+
   /* referencia képek lightboxban */
   (function(){
     const lb=document.getElementById('lightbox');
