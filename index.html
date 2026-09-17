@@ -272,8 +272,6 @@ if(localStorage.getItem('cookie-consent')==='accepted'){ loadMetaPixel(); }
   form .btn{width:100%;margin-top:6px}
   .form-fine{font-size:.8rem;color:var(--muted);margin-top:14px;text-align:center;font-weight:600}
   .form-call{font-size:.86rem;color:var(--muted);margin-top:10px;text-align:center;font-weight:700}
-  .ok{display:none;text-align:center;padding:20px 0}
-  .ok .big{font-family:'Poppins';font-weight:800;font-size:1.5rem;color:var(--green-d);margin-bottom:8px}
 
   /* záró CTA sáv */
   .final-cta{background:linear-gradient(135deg,var(--green),var(--green-deep));color:#fff;text-align:center}
@@ -452,10 +450,6 @@ if(localStorage.getItem('cookie-consent')==='accepted'){ loadMetaPixel(); }
         <button class="btn" type="submit">Ingyenes ajánlatot kérek →</button>
         <div class="form-fine">Kötelezettségmentes, az adataidat nem adjuk tovább.</div>
         <div class="form-call">Vagy hívj közvetlenül: <a href="tel:+36304166054">+36 30 416 6054</a></div>
-      </div>
-      <div class="ok" id="form-ok">
-        <div class="big">Megvan, köszönjük! ✓</div>
-        <p style="color:var(--muted)">24 órán belül keresünk telefonon a felmérés időpontjáért.</p>
       </div>
     </form>
   </div>
@@ -661,9 +655,7 @@ if(localStorage.getItem('cookie-consent')==='accepted'){ loadMetaPixel(); }
     })
     .then(res=>{ if(!res.ok) throw new Error('Sikertelen küldés'); return res.json(); })
     .then(()=>{
-      if(typeof fbq==='function'){ fbq('track','Lead'); }   /* Meta Pixel Lead event */
-      document.getElementById('form-content').style.display='none';
-      document.getElementById('form-ok').style.display='block';
+      window.location.href='koszonjuk.html';   /* a Meta Pixel Lead esemény a köszönjük-oldalon tüzel */
     })
     .catch(()=>{
       if(submitBtn){ submitBtn.disabled=false; submitBtn.textContent=origLabel; }
