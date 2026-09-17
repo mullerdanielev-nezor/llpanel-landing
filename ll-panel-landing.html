@@ -394,6 +394,9 @@ src="https://www.facebook.com/tr?id=PIXEL_ID_IDE&ev=PageView&noscript=1"/></nosc
     </div>
 
     <form id="lead-form" novalidate>
+      <input type="hidden" name="_subject" value="Új ajánlatkérés – laminált parkettázás">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <div id="form-content">
         <h3>Ingyenes ajánlatot kérek</h3>
         <p class="sub">Töltsd ki, a többit intézzük.</p>
@@ -579,9 +582,10 @@ src="https://www.facebook.com/tr?id=PIXEL_ID_IDE&ev=PageView&noscript=1"/></nosc
   tickCountdown();
   setInterval(tickCountdown,1000);
 
-  /* űrlap beküldés + Meta Pixel Lead event */
+  /* űrlap beküldés e-mailben (FormSubmit.co) + Meta Pixel Lead event */
   document.getElementById('lead-form').addEventListener('submit',function(ev){
     ev.preventDefault();
+    const form=this;
     const name=document.getElementById('name').value.trim();
     const phone=document.getElementById('phone').value.trim();
     if(!name||!phone){
@@ -590,13 +594,25 @@ src="https://www.facebook.com/tr?id=PIXEL_ID_IDE&ev=PageView&noscript=1"/></nosc
       return;
     }
 
-    /* >>> IDE jön a valós beküldés: e-mail / webhook / CRM <<< */
-    /* pl. fetch('/lead', {method:'POST', body: new FormData(this)}) */
+    const submitBtn=form.querySelector('button[type="submit"]');
+    const origLabel=submitBtn?submitBtn.textContent:'';
+    if(submitBtn){ submitBtn.disabled=true; submitBtn.textContent='Küldés...'; }
 
-    if(typeof fbq==='function'){ fbq('track','Lead'); }   /* Meta Pixel Lead event */
-
-    document.getElementById('form-content').style.display='none';
-    document.getElementById('form-ok').style.display='block';
+    fetch('https://formsubmit.co/ajax/mullerdanielev@gmail.com',{
+      method:'POST',
+      headers:{'Accept':'application/json'},
+      body:new FormData(form)
+    })
+    .then(res=>{ if(!res.ok) throw new Error('Sikertelen küldés'); return res.json(); })
+    .then(()=>{
+      if(typeof fbq==='function'){ fbq('track','Lead'); }   /* Meta Pixel Lead event */
+      document.getElementById('form-content').style.display='none';
+      document.getElementById('form-ok').style.display='block';
+    })
+    .catch(()=>{
+      if(submitBtn){ submitBtn.disabled=false; submitBtn.textContent=origLabel; }
+      alert('Hiba történt a küldés közben. Kérlek próbáld újra, vagy hívj közvetlenül: +36 30 416 6054.');
+    });
   });
 </script>
 </body>
